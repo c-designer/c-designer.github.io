@@ -4,7 +4,7 @@ module.exports = {
   author: `C-Designer`,
 
   siteUrl: `https://c-designer.github.io`,
-  ogImage: `https://raw.githubusercontent.com/zoomKoding/gatsby-starter-zoomkoding/master/src/assets/og-image.png`,
+  ogImage: `/og-image.png`, // Path to your image you placed in the 'static' folder
   social: {
     github: `https://github.com/c-designer`,
     linkedIn: ``,
