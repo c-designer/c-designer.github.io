@@ -1,7 +1,7 @@
 module.exports = {
-  title: `C-Designer`,
+  title: `C-Design`,
   description: `Life is Č between B and D`,
-  author: `김창동`,
+  author: `C-Designer`,
 
   siteUrl: `https://c-designer.github.io`,
   ogImage: `https://raw.githubusercontent.com/zoomKoding/gatsby-starter-zoomkoding/master/src/assets/og-image.png`,
