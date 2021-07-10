@@ -59,7 +59,8 @@ strong {
 
         .title {
           .react-rotating-text-cursor {
-            font-size: 40px;
+            font-size: 35px;
+            line-height: 35px;
           }
         }
 
@@ -69,15 +70,12 @@ strong {
           .title {
             .react-rotating-text-cursor {
               font-size: 45px;
+              line-height: 45px;
             }
           }
         }
 
-        .title {
-          .react-rotating-text-cursor {
-            font-size: 40px;
-          }
-        }
+
       }
 
       &.english {
