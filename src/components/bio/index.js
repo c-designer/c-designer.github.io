@@ -1,33 +1,34 @@
 import React from 'react';
 import ReactRotatingText from 'react-rotating-text';
+<<<<<<< HEAD
 
 import authorVideo from '../../../assets/author.mp4';
+=======
+>>>>>>> 61db9faea2024b99d82914588c2dd97b776662b6
 import IconButtonBar from '../icon-button-bar';
+import Image from '../image';
 
 import './style.scss';
 
-const Bio = ({ bio, social }) => {
+const Bio = ({ author, language = 'ko' }) => {
+  const { bio, social, name } = author;
+
+  if (!author) return null;
   return (
     <div className="bio-wrapper">
       <div className="bio">
-        {bio?.language === 'ko' ? (
+        {language === 'ko' ? (
           <div className="introduction korean">
             <p className="title">
               안녕하세요.
               <br />
-              <ReactRotatingText items={bio?.description} />
+              <ReactRotatingText items={bio.description} />
               <br />
-              개발자 <strong>{bio?.name}</strong>입니다.
+              {bio.role} <strong>{name}</strong>입니다.
               <br />
             </p>
             <div className="social-links">
-              <IconButtonBar
-                links={social}
-                style={{
-                  fontSize: '30px',
-                  color: 'rgba(0, 0, 0, 0.54)',
-                }}
-              />
+              <IconButtonBar links={social} />
             </div>
           </div>
         ) : (
@@ -37,27 +38,19 @@ const Bio = ({ bio, social }) => {
               <br />
               my name is
               <br />
-              <strong>{bio?.name}</strong>
+              <strong>{name}</strong>
               .<br />
             </p>
             <p className="description">
-              I'm a developer <ReactRotatingText items={bio?.description} />
+              I'm a {bio.role} <ReactRotatingText items={bio.description} />
               <br />
             </p>
             <div className="social-links">
-              <IconButtonBar
-                links={social}
-                style={{
-                  fontSize: '30px',
-                  color: 'rgba(0, 0, 0, 0.54)',
-                }}
-              />
+              <IconButtonBar links={social} />
             </div>
           </div>
         )}
-        <video className="video" muted autoPlay loop>
-          <source src={authorVideo} type="video/mp4" />
-        </video>
+        <Image className="thumbnail" src={bio.thumbnail} alt="thumbnail" />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Image = ({ src, ...rest }) => {
+  console.log(src, rest);
   const data = useStaticQuery(graphql`
     query {
       images: allFile(filter: { sourceInstanceName: { eq: "assets" } }) {
@@ -33,10 +34,10 @@ const Image = ({ src, ...rest }) => {
   const { node: { childImageSharp, publicURL, extension } = {} } = match;
 
   if (extension === 'svg' || !childImageSharp) {
-    return <img src={publicURL} {...rest} />;
+    return <img src={publicURL} alt={publicURL} {...rest} />;
   }
 
-  return <Img fluid={childImageSharp.fluid} {...rest} />;
+  return <Img fluid={childImageSharp.fluid} alt={publicURL} {...rest} />;
 };
 
 Image.propTypes = {
